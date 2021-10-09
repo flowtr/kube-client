@@ -1,0 +1,41 @@
+{
+  "name": "@flowtr/kube",
+  "version": "1.0.0",
+  "description": "Tiny kuberntes client written in Typescript",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "./*": "./dist/*"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./dist/*"
+      ]
+    }
+  },
+  "scripts": {
+    "test": "mocha -r esm",
+    "lint": "eslint src/**/*.ts --fix",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "Theo Paris <theoparisdesigns@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@theoparis/eslint-config": "github:creepinson/eslint-config#update",
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.10.3",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "esm": "^3.2.25",
+    "mocha": "^9.1.2",
+    "prettier": "^2.4.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "axios": "^0.22.0"
+  }
+}
