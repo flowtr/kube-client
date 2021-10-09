@@ -15,7 +15,7 @@ A better documentation site is coming soon, however basic usage is provided belo
 ```typescript
 import { KubeClient } from "@flowtr/kube/client.js";
 
-// run "kubectl proxy --port=8008" so that it works without authentication
+// run "kubectl proxy --address=127.0.0.1 --port=8008" so that it works without authentication
 // as auth isn't currently implemented
 const client = new KubeClient("http://localhost:8008/api/v1");
 ```
@@ -28,4 +28,3 @@ const pods = await client.getPods("default");
 
 console.log(pods[0]);
 ```
-

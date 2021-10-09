@@ -4,6 +4,14 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "no-shadow": "off"
-  }
-}
+  },
 
+  "overrides": [
+    {
+      "files": ["*.test.mjs"],
+      "rules": {
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
+}
