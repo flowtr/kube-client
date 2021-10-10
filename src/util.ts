@@ -23,10 +23,10 @@ export interface Volume {
 
 export interface PodContainer {
   name: string;
-  args: string[];
-  command: string[];
-  env: EnvVar[];
-  image: string;
+  args?: string[];
+  command?: string[];
+  env?: EnvVar[];
+  image?: string;
   imagePollPolicy?: "Always" | "Never" | "IfNotPresent";
   stdin?: boolean;
   stdinOnce?: boolean;
@@ -51,8 +51,44 @@ export interface Pod {
     annotations: Record<string, string>;
     labels: Record<string, string>;
     clusterName: string;
+    name: string;
     creationTimestamp: string;
     deletionTimestamp?: string;
   };
   spec: PodSpec;
+}
+
+export interface PodCreationData {
+  metadata: {
+    annotations: Record<string, string>;
+    labels: Record<string, string>;
+    name: string;
+  };
+
+  spec: {
+    containers: PodContainer[];
+  };
+}
+
+export interface PodDeletionData {
+  labelSelector?: string;
+  fieldSelector?: number;
+  limit?: number;
+}
+
+export interface PodDeletionResponse {
+  code: number;
+  details: {
+    cause: {
+      field: string;
+      message: string;
+      reason: string;
+    }[];
+    group: string;
+    name: string;
+    uid: string;
+  };
+  message: string;
+  reason: string;
+  status: string;
 }
